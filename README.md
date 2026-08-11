@@ -9,5 +9,5 @@ This repository contains my code-based projects for CMPM 180.
 Interactive code artwork about social pressure, conformity, and multilingual ratings.
 
 - [Project 1 Folder](./project1/)
-- [Play Read the Air](https://cliffjiang.github.io/CMPM180/project1/)
+- [Play Read the Air](https://cliffjiang117.github.io/CMPM180/project1/)
 - [Artist Statement](./project1/Artist_Statement.md)
