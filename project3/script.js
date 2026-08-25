@@ -48,8 +48,8 @@ const mobilePage = document.getElementById("mobilePage");
 const desktopPage = document.getElementById("desktopPage");
 
 // Remember to change this!
-//if (isMobileDevice()) {
-if (false) {
+if (isMobileDevice()) {
+//if (false) {
 
   mobilePage.classList.remove("hidden");
 
