@@ -25,7 +25,7 @@ A one-time interactive audio work about choice, deletion, memory, and the end of
 
 ### Project 3 — Collective Poem
 
-Project 3 is a networked poetry installation that connects mobile devices, desktop computers, and a shared online database. Mobile users contribute two words and one place to receive a temporary password, then carry that password to a desktop computer. Once redeemed, the password disappears and the submitted language joins a shared pool, where it is randomly recombined with other users' contributions into continuously changing 5 / 7 / 5 poems. 
+A networked poetry installation that connects mobile devices, desktop computers, and a shared online database. Mobile users contribute two words and one place to receive a temporary password, then carry that password to a desktop computer. Once redeemed, the password disappears and the submitted language joins a shared pool, where it is randomly recombined with other users' contributions into random generate poems.
 
 **Note: In order to fully run this you need a computer and a mobile devices**
 
