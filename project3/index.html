@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Project 3</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Mobile page -->
+  <main id="mobilePage" class="hidden">
+
+    <h1>Leave Something Here</h1>
+
+    <form id="mobileForm">
+
+      <label>
+        Give me a word
+        <input
+          id="word1"
+          type="text"
+          maxlength="30"
+          required
+        >
+      </label>
+
+      <label>
+        Give me another word
+        <input
+          id="word2"
+          type="text"
+          maxlength="30"
+          required
+        >
+      </label>
+
+      <label>
+        Give me a place
+        <input
+          id="place"
+          type="text"
+          maxlength="50"
+          required
+        >
+      </label>
+
+      <button type="submit">
+        Submit
+      </button>
+
+    </form>
+
+
+    <section id="passwordResult" class="hidden">
+
+      <p>Your password is</p>
+
+      <div id="passwordDisplay"></div>
+
+      <p>Carry it to a computer.</p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Desktop placeholder -->
+  <main id="desktopPage" class="hidden">
+
+    <section id="passwordPage">
+
+      <h1>Enter Password</h1>
+
+      <form id="desktopForm">
+
+        <input
+          id="passwordInput"
+          type="text"
+          placeholder="Enter password"
+          autocomplete="off"
+          required
+        >
+
+        <button type="submit">
+          Enter
+        </button>
+
+      </form>
+
+      <p id="passwordError"></p>
+
+    </section>
+
+
+    <section id="poemPage" class="hidden">
+
+      <h1>Collective Poem</h1>
+
+      <p>
+        Password accepted.
+      </p>
+
+      <div id="poemDisplay">
+
+      </div>
+
+      <p>
+      </p>
+
+      <!---->
+      <button id="resetDesktop">Reset Desktop</button>
+      
+
+    </section>
+
+  </main>
+
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+}
+
+button {
+  font-size: 18px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+#passwordResult {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#passwordDisplay {
+  margin: 20px 0;
+
+  font-size: 40px;
+  font-weight: bold;
+
+  letter-spacing: 4px;
+}
+
+#poemDisplay {
+  white-space: pre-line;
+}
