@@ -1,0 +1,373 @@
+:root {
+  --mint: #A9DDD6;
+  --slate: #7A8B99;
+  --blue: #91ADC2;
+  --lavender: #9BA0BC;
+  --pink: #C1B8C8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  color: var(--slate);
+  background: var(--slate);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main word field */
+#stage {
+  position: absolute;
+  inset: 0 0 164px;
+  overflow: hidden;
+  background: var(--slate);
+}
+
+.word-area {
+  position: absolute;
+  width: min(28vw, 330px);
+  height: min(30vh, 240px);
+  overflow: hidden;
+  border: 2px solid var(--lavender);
+  background: var(--mint);
+}
+
+.noun-area {
+  top: 14%;
+  left: 7%;
+}
+
+.verb-area {
+  top: 12%;
+  right: 7%;
+}
+
+.adjective-area {
+  bottom: 8%;
+  left: 36%;
+}
+
+/* The cursor cuts a small window through each area cover. */
+.area-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  color: var(--slate);
+  background: var(--pink);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  pointer-events: none;
+  mask-image: radial-gradient(
+    circle 86px at var(--mouse-x, -200px) var(--mouse-y, -200px),
+    transparent 0 72px,
+    var(--slate) 86px
+  );
+}
+
+.world-word {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  color: var(--slate);
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.world-word.active {
+  cursor: grab;
+}
+
+.world-word.loose {
+  z-index: 3;
+  color: var(--mint);
+}
+
+/* Composition bar */
+#composer {
+  position: absolute;
+  inset: auto 0 0;
+  min-height: 164px;
+  padding: 12px 18px 8px;
+  background: var(--blue);
+  border-top: 2px solid var(--lavender);
+}
+
+#slot-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+}
+
+.word-slot {
+  height: 68px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--slate);
+  background: var(--pink);
+  color: var(--slate);
+  font-size: 1rem;
+  text-align: center;
+  word-break: break-all;
+  user-select: none;
+}
+
+.word-slot.has-word {
+  cursor: grab;
+}
+
+.word-slot.frozen {
+  background: var(--mint);
+}
+
+.word-slot.dead {
+  color: var(--lavender);
+  background: var(--slate);
+}
+
+#field-view.locked .word-slot,
+#field-view.locked .drag-tool {
+  cursor: default;
+}
+
+#tool-row,
+.tool-group {
+  display: flex;
+  align-items: center;
+}
+
+#tool-row {
+  gap: 24px;
+  margin-top: 9px;
+}
+
+.tool-group {
+  gap: 6px;
+}
+
+.tool-label {
+  margin-right: 4px;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.drag-tool,
+#submit-button {
+  height: 30px;
+  border: 2px solid var(--slate);
+  background: var(--pink);
+  cursor: grab;
+}
+
+.drag-tool {
+  min-width: 30px;
+  padding: 0 8px;
+}
+
+.drag-tool:hover,
+#submit-button:hover {
+  background: var(--mint);
+}
+
+.anchor.used {
+  color: var(--lavender);
+  background: var(--slate);
+  cursor: default;
+}
+
+#submit-button {
+  margin-left: auto;
+  padding: 0 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#submission-output {
+  height: 16px;
+  margin: 4px 0 0;
+  overflow: hidden;
+  font-size: .75rem;
+}
+
+#drag-ghost {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  transform: translate(-50%, -50%);
+  padding: 5px 9px;
+  border: 2px solid var(--slate);
+  color: var(--slate);
+  background: var(--mint);
+  font-size: 1.1rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Public archive */
+#gallery-view {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow-y: auto;
+  padding: 70px 10vw 100px;
+  color: var(--slate);
+  background: var(--mint);
+}
+
+#poem-list {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.poem-entry {
+  margin-bottom: 3.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.poem-author {
+  min-height: 1.2rem;
+  margin-top: .6rem;
+  color: var(--lavender);
+  font-size: .8rem;
+}
+
+#back-button {
+  display: block;
+  margin: 20px auto 0;
+  height: 30px;
+  border: 2px solid var(--slate);
+  background: var(--pink);
+  cursor: pointer;
+}
+
+/* Optional name popup */
+#name-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: var(--slate);
+}
+
+#name-modal.hidden {
+  display: none;
+}
+
+#name-box {
+  width: min(360px, calc(100vw - 40px));
+  padding: 24px;
+  border: 2px solid var(--slate);
+  background: var(--blue);
+  text-align: center;
+}
+
+#name-box p {
+  margin: 0 0 18px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+#author-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 9px;
+  border: 2px solid var(--slate);
+  outline: 0;
+  color: var(--slate);
+  background: var(--pink);
+  font: inherit;
+}
+
+#author-input:focus {
+  background: var(--mint);
+}
+
+#name-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+#name-buttons button {
+  height: 30px;
+  border: 2px solid var(--slate);
+  background: var(--pink);
+  cursor: pointer;
+}
+
+#name-buttons button:hover {
+  background: var(--mint);
+}
+
+#reset-button {
+  position: fixed;
+  left: 3px;
+  bottom: 3px;
+  z-index: 30;
+  padding: 2px 4px;
+  border: 0;
+  color: var(--slate);
+  background: transparent;
+  font-size: .55rem;
+  opacity: .08;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  #stage {
+    bottom: 210px;
+  }
+
+  #composer {
+    min-height: 210px;
+  }
+
+  #slot-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .word-slot {
+    height: 48px;
+  }
+
+  #tool-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #submit-button {
+    margin-left: 0;
+  }
+}

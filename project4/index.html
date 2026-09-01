@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Field</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="field-view">
+    <main id="stage">
+      <section class="word-area noun-area" data-type="noun">
+        <div class="area-cover">NOUN</div>
+      </section>
+
+      <section class="word-area verb-area" data-type="verb">
+        <div class="area-cover">VERB</div>
+      </section>
+
+      <section class="word-area adjective-area" data-type="adjective">
+        <div class="area-cover">ADJECTIVE</div>
+      </section>
+    </main>
+
+    <section id="composer">
+      <div id="slot-row">
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+        <div class="word-slot"></div>
+      </div>
+
+      <div id="tool-row">
+        <div class="tool-group">
+          <span class="tool-label">PUNCTUATION</span>
+          <button class="drag-tool punctuation" data-text=",">,</button>
+          <button class="drag-tool punctuation" data-text=".">.</button>
+          <button class="drag-tool punctuation" data-text="?">?</button>
+          <button class="drag-tool punctuation" data-text="!">!</button>
+          <button class="drag-tool punctuation" data-text=";">;</button>
+          <button class="drag-tool punctuation" data-text=":">:</button>
+          <button class="drag-tool punctuation" data-text="—">—</button>
+        </div>
+
+        <div class="tool-group">
+          <span class="tool-label">ANCHOR</span>
+          <button class="drag-tool anchor">♜⃤</button>
+          <button class="drag-tool anchor">♜⃤</button>
+          <button class="drag-tool anchor">♜⃤</button>
+        </div>
+
+        <button id="submit-button">SUBMIT</button>
+      </div>
+
+      <p id="submission-output" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section id="gallery-view" class="hidden">
+    <div id="poem-list"></div>
+    <button id="back-button">BACK TO FIELD</button>
+  </section>
+
+  <div id="name-modal" class="hidden">
+    <div id="name-box">
+      <p>LEAVE YOUR NAME</p>
+      <input id="author-input" type="text" maxlength="24" placeholder="This is optional">
+      <div id="name-buttons">
+        <button id="confirm-submit">PRESERVE</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="reset-button" aria-label="Reset local submission memory">RESET</button>
+  <div id="drag-ghost"></div>
+  <script type="module" src="sketch.js"></script>
+</body>
+</html>

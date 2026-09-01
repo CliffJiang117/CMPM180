@@ -17,7 +17,7 @@ Interactive code artwork about social pressure, conformity, and multilingual rat
 
 A one-time interactive audio work about choice, deletion, memory, and the end of a program's life.
 
-**Note:*Last Dance* remembers its completion in the browser. Once the experience has ended, returning to it in the same browser will lead to the memorial rather than restarting the original piece.** 
+**Note: *Last Dance* remembers its completion in the browser. Once the experience has ended, returning to it in the same browser will lead to the memorial rather than restarting the original piece.** 
 
 - [Project 2 README](./Project2/README.md)
 - [Play Last Dance](https://cliffjiang117.github.io/CMPM180/Project2/)
@@ -31,3 +31,13 @@ A networked poetry installation that connects mobile devices, desktop computers,
 
 - [Project 3 README](./project3/README.md)
 - [Play Collective Poem](https://cliffjiang117.github.io/CMPM180/project3/)
+
+
+### Project 4 - Word Field
+
+An interactive poetry work about temporary language, decay, preservation, and authorship. Search for hidden words, arrange them before they deteriorate, choose what to preserve, and submit one line to a shared public archive.
+
+**Note: Each device can only submit once**
+
+- [Project 4 README](./project4/README.md)
+- [Play Word Field](https://cliffjiang117.github.io/CMPM180/project4/)
